@@ -1,0 +1,92 @@
+
+body{
+
+    background-image:url(bg19.jpg) !important;
+
+    background-size:cover !important;
+
+    background-repeat:no-repeat !important;
+
+    background-position:center ;
+
+    background-attachment:fixed;
+}
+
+
+#container{
+
+    background:rgba(0,0,0,0.35) !important;
+
+    backdrop-filter:blur(10px);
+
+    
+}
+
+
+.login #content{
+
+    background:rgba(255,255,255,0.08) !important;
+
+    backdrop-filter:blur(12px);
+
+    border-radius:0px;
+
+    padding:30px;
+}
+
+
+.login .submit-row input{
+
+    background:#069454 !important;
+
+    border:none !important;
+
+    border-radius:15px;
+
+    color:white !important;
+}
+
+
+#header{
+
+    background:rgba(0, 0, 0, 0.4) !important;
+
+    backdrop-filter:blur(10px);
+}
+
+
+#site-name a{
+
+    color:#2e9a44 !important;
+
+    font-size:32px;
+
+    font-family:cursive;
+}
+
+
+.module h2, .module caption{
+
+    background:#289032 !important;
+}
+
+
+div.breadcrumbs{
+
+    background:#27a549 !important;
+
+    color:white !important;
+}
+
+
+.button,
+input[type=submit],
+input[type=button],
+.submit-row input{
+
+    background:#069454 !important;
+
+    border:none !important;
+
+    border-radius:15px !important;
+}

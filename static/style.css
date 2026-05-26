@@ -1,0 +1,54 @@
+body {
+    background-image: url(bg11.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+   
+   
+}
+
+.main-logo{
+    
+    font-size: 52px;
+    font-weight: lighter;
+    color:rgb(47, 200, 54);
+    text-align: center;
+    letter-spacing: 5px;
+    font-family:  'Great Vibes', cursive;
+    
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.button-container{
+    display:flex;
+    gap:30px;
+}
+
+.anime-btn{
+    text-decoration:none;
+    color:white;
+    padding:14px 32px;
+    border-radius:30px;
+    font-family: monospace;
+    font-size:18px;
+    backdrop-filter:blur(8px);
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.3);
+    transition:0.3s;
+    box-shadow:0px 4px 20px rgba(0,0,0,0.3);
+}
+
+.anime-btn:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.2);
+    box-shadow:0px 6px 25px rgba(255,182,255,0.4);
+}

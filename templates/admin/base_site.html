@@ -1,0 +1,33 @@
+{% extends "admin/base.html" %}
+
+{% load static %}
+
+
+
+
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block branding %}
+
+<h1 id="site-name">
+
+    <a href="/admin/">
+
+         Welcome :)
+
+    </a>
+
+</h1>
+
+{% endblock %}
+
+{% block extrastyle %}
+
+{{ block.super }}
+
+<link rel="stylesheet" href="{% static 'admin.css' %}">
+
+{% endblock %}

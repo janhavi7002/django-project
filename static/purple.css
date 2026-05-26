@@ -1,0 +1,106 @@
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image:url(bg3.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+    
+}
+
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width:60%;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(10px);
+
+    background:rgba(248, 72, 218, 0.08);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0px 8px 32px rgba(0,0,0,0.4);
+
+    text-align:center;
+}
+
+.form-container h2{
+    color:#f0d6ff;
+}
+
+
+.anime-form{
+
+    display:flex;
+
+    flex-direction: column;
+
+    justify-content:center;
+
+    gap:20px;
+}
+
+.anime-form input{
+
+    width:350px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:15px;
+
+    outline:none;
+
+    background:rgba(255,255,255,0.15);
+
+    color:white;
+
+    font-size:16px;
+
+    backdrop-filter:blur(5px);
+
+    align-items: center;
+    align-content: center;
+}
+
+.anime-form input::placeholder{
+    color:#f0d6ff;
+}
+
+.anime-form button{
+
+    padding:14px 35px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#069454;
+
+    color:white;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.anime-form button:hover{
+
+    transform:scale(1.05);
+
+    background:#ffbef7;
+}

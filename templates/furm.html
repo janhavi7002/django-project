@@ -8,14 +8,10 @@
   <link rel="stylesheet" href="{% static 'purple.css' %}">
 </head>
 <body>
-  <div class="container">
-    <div class="left-panel">
-      <img src="" alt="Creative Portrait" />
-    </div>
-    <div class="right-panel">
-      <form method="POST">
+  <div class="form-container">
+    <h2>Enter your details</h2>
+      <form class="anime-form" method="POST">
         {% csrf_token %}
-        <h2>Enter your details</h2>
 
         <input type="text" name="name" placeholder="Full Name" required />
         <input type="email" name="email" placeholder="Email" required />
@@ -34,7 +30,7 @@
       {% if success %}
         <p style="color: green;">✔️ Form submitted successfully!</p>
       {% endif %}
-    </div>
   </div>
+
 </body>
 </html>
