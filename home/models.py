@@ -1,18 +1,25 @@
 from django.db import models
 
-# Create your models here.
-
 class Student(models.Model):
-    name = models.TextField()
+    name = models.CharField(max_length=100)
+
     email = models.EmailField()
-    admission_number = models.TextField()
-    branch = models.TextField()
+
+    admission_number = models.CharField(max_length=30)
+
+    branch = models.CharField(max_length=50)
+
     year = models.IntegerField()
-    contact_number = models.BigIntegerField()
-    component_name = models.TextField()
-    componentissue_date = models.TextField()
-    componentdue_date = models.TextField()
-    faculty_referred = models.TextField()
+
+    contact_number = models.CharField(max_length=10)
+
+    component_name = models.CharField(max_length=100)
+
+    componentissue_date = models.DateField()
+
+    componentdue_date = models.DateField()
+
+    faculty_referred = models.CharField(max_length=100)
 
     class Meta:
-        db_table = 'students'  # This forces the table name to be 'students'
+        db_table = 'students'

@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component History</title>
+
+    <link rel="stylesheet" href="{% static 'history.css' %}">
+</head>
+<body>
+
+<div class="history-box">
+
+    <h1>📜 Component History</h1>
+
+    {% if records %}
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Component Name</th>
+                <th>Admission No</th>
+                <th>Branch</th>
+                <th>Issue Date</th>
+                <th>Due Date</th>
+                <th>Faculty Referred</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for record in records %}
+
+            <tr>
+                <td>{{ record.component_name }}</td>
+                <td>{{ record.admission_number }}</td>
+                <td>{{ record.branch }}</td>
+                <td>{{ record.componentissue_date }}</td>
+                <td>{{ record.componentdue_date }}</td>
+                <td>{{ record.faculty_referred }}</td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    {% else %}
+
+    <h3 class="empty-message">
+        No components requested yet.
+    </h3>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

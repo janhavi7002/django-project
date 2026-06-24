@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notifications</title>
+    <link rel="stylesheet" href="/static/notification.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🔔 Notifications</h1>
+
+    {% for msg in reminders %}
+        <div class="notification-card">
+            {{ msg }}
+        </div>
+    {% empty %}
+        <div class="notification-card">
+            No notifications right now 🎉
+        </div>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

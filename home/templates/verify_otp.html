@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify OTP</title>
+<link rel="stylesheet" href="/static/otp.css">
+</head>
+<body>
+<div class="form-container">
+<h2>Enter OTP</h2>
+
+<form class="anime-form" method="POST">
+
+    {% csrf_token %}
+
+    <input
+        type="text"
+        name="otp"
+        placeholder="Enter OTP"
+        required
+    >
+
+    <button type="submit">
+        Verify
+    </button>
+
+</form>
+</div>
+{% if error %}
+<p style="color:red;">
+    {{ error }}
+</p>
+{% endif %}
+
+</body>
+</html>

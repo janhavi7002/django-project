@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Welcome {{ user.username }} ✨</h1>
+
+    <div class="cards">
+
+        <a href="/profile/" class="card">
+            <h2>👤 Profile</h2>
+            <p>View your details</p>
+        </a>
+
+        <a href="/history/" class="card">
+            <h2>📜 History</h2>
+            <p>Borrowed Components</p>
+        </a>
+
+        <a href="/furm/" class="card">
+            <h2>🛠 Issue Component</h2>
+            <p>Request New Component</p>
+        </a>
+
+        <a href="/notifications/" class="card">
+            <h2>🔔 Notifications</h2>
+            <p>Check Reminders</p>
+        </a>
+
+        
+
+    </div>
+
+</div>
+
+</body>
+</html>
