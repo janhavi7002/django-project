@@ -24,7 +24,11 @@ def register(request):
         branch = request.POST.get("branch")
         year = request.POST.get("year")
         contact_number = request.POST.get("contact_number")
-        component_name = request.POST.get("component_name")
+
+        # Multiple components
+        components = request.POST.getlist("component_name[]")
+        quantities = request.POST.getlist("quantity[]")
+
         componentissue_date = request.POST.get("componentissue_date")
         componentdue_date = request.POST.get("componentdue_date")
         faculty_referred = request.POST.get("faculty_referred")
@@ -53,18 +57,24 @@ def register(request):
                 {"error": "Year must be between 1 and 4."}
             )
 
-        Student.objects.create(
-            name=name,
-            email=email,
-            admission_number=admission_number,
-            branch=branch,
-            year=year,
-            contact_number=contact_number,
-            component_name=component_name,
-            componentissue_date=componentissue_date,
-            componentdue_date=componentdue_date,
-            faculty_referred=faculty_referred
-        )
+        # Save each component separately
+        for component, quantity in zip(components, quantities):
+
+            if component.strip():
+
+                Student.objects.create(
+                    name=name,
+                    email=email,
+                    admission_number=admission_number,
+                    branch=branch,
+                    year=year,
+                    contact_number=contact_number,
+                    component_name=component,
+                    quantity=quantity,
+                    componentissue_date=componentissue_date,
+                    componentdue_date=componentdue_date,
+                    faculty_referred=faculty_referred
+                )
 
         return render(
             request,
@@ -108,7 +118,7 @@ def signup_view(request):
             password=password
         )
 
-        return redirect("/login.html/")
+        return redirect("/login/")
 
     return render(request, "signup.html")
 
@@ -167,6 +177,7 @@ def login_user(request):
     return render(request, "login.html")
 
 
+# OTP Verification
 def verify_otp(request):
 
     if request.method == "POST":
@@ -195,6 +206,7 @@ def verify_otp(request):
 
     return render(request, "verify_otp.html")
 
+
 # Dashboard
 def dashboard(request):
     return render(request, "dashboard.html")
@@ -204,7 +216,8 @@ def dashboard(request):
 def profile(request):
 
     records = Student.objects.filter(
-        email=request.user.email
+        email=request.user.email,
+        is_deleted=False
     ).first()
 
     return render(
@@ -218,7 +231,8 @@ def profile(request):
 def history(request):
 
     records = Student.objects.filter(
-        email=request.user.email
+        email=request.user.email,
+        is_deleted=False
     ).order_by("-id")
 
     return render(
@@ -232,7 +246,8 @@ def history(request):
 def notifications(request):
 
     records = Student.objects.filter(
-        email=request.user.email
+        email=request.user.email,
+        is_deleted=False
     )
 
     reminders = []

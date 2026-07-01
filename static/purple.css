@@ -131,3 +131,43 @@ input[type="date"] {
     color:#ffd6e8;
     border:1px solid rgba(255,255,255,0.2);
 }
+
+.component-row{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:15px;
+}
+
+.component-row label{
+    color:#f0d6ff;
+    font-size:14px;
+    text-align:left;
+    padding-left:5px;
+}
+
+.add-btn{
+
+    margin-bottom:20px;
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#8e44ad;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.add-btn:hover{
+
+    background:#a855f7;
+
+    transform:scale(1.03);
+}
