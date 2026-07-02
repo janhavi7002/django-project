@@ -17,6 +17,7 @@ class Student(models.Model):
     branch = models.CharField(max_length=50)
 
     year = models.IntegerField()
+<<<<<<< HEAD
 
     contact_number = models.CharField(max_length=10)
 
@@ -42,6 +43,14 @@ class Student(models.Model):
         null=True,
         blank=True
     )
+=======
+    contact_number = models.BigIntegerField()
+    component_name = models.TextField()
+    componentissue_date = models.TextField()
+    componentdue_date = models.TextField()
+    faculty_referred = models.TextField()
+    remarks =models.TextField(blank=True, null=True, help_text="Remarks")
+>>>>>>> upstream/main
 
     class Meta:
         db_table = "students"

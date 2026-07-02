@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+<<<<<<< HEAD
 
     
+=======
+    'import_export'
+>>>>>>> upstream/main
 ]
 
 MIDDLEWARE = [

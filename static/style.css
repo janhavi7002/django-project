@@ -1,24 +1,80 @@
-body {
-    background-image: url(bg11.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
-    background-attachment: fixed;
-   
-   
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle,
+    rgba(0,255,255,.06),
+    transparent 70%);
+
+    filter:blur(70px);
+
 }
+body {
+    background: #000;
+      
+    background-image:
+    linear-gradient(rgb(12, 12, 116) 2px, transparent 2px),
+    linear-gradient(90deg, rgb(48, 45, 45) 2px, transparent 2px);
+    background-size:160px 100px;
+    animation:test 8s linear infinite;
+   
+
+}
+
+@keyframes test{
+
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:40px 40px;
+    }}
+
 
 .main-logo{
     
-    font-size: 52px;
-    font-weight: lighter;
-    color:rgb(47, 200, 54);
-    text-align: center;
-    letter-spacing: 5px;
-    font-family:  'Great Vibes', cursive;
-    
+    font-size: 45px;
+     font-family:'Orbitron', sans-serif;   /* or your cursive font */
+    color:#ffffff;
+    text-shadow:
+        0 0 5px #1d545a,
+        0 0 10px #31929b,
+        0 0 20px #44afb9,
+        0 0 40px #00eaff;
+
+    animation: flicker 3s infinite;}
+
+@keyframes flicker{
+
+    0%,18%,22%,25%,53%,57%,100%{
+        opacity:1;
+        text-shadow:
+            0 0 5px #00eaff,
+            0 0 10px #00eaff,
+            0 0 20px #00eaff,
+            0 0 40px #00eaff,
+            0 0 80px #00eaff;
+    }
+
+    20%,24%,55%{
+        opacity:.2;
+        text-shadow:none;
+    }
+
+    21%,56%{
+        opacity:.8;
+    }
 }
+    
+
 
 .container{
     display:flex;
@@ -35,20 +91,124 @@ body {
 
 .anime-btn{
     text-decoration:none;
-    color:white;
     padding:14px 32px;
     border-radius:30px;
     font-family: monospace;
     font-size:18px;
     backdrop-filter:blur(8px);
-    background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.3);
     transition:0.3s;
     box-shadow:0px 4px 20px rgba(0,0,0,0.3);
+    background:#111;
+    border:1px solid #00d9ff;
+    color:#e8ffff;
 }
 
 .anime-btn:hover{
     transform:translateY(-3px);
     background:rgba(255,255,255,0.2);
-    box-shadow:0px 6px 25px rgba(255,182,255,0.4);
+    box-shadow:
+  0 0 10px #317c8a,
+  0 0 20px #00d9ff;
+}
+
+#svg-global {
+  zoom: 1.2;
+  overflow: visible;
+}
+
+@keyframes fade-particles {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+
+#particles {
+  animation: fade-particles 5s infinite alternate;
+}
+.particle {
+  animation: floatUp linear infinite;
+}
+
+.p1 {
+  animation-duration: 2.2s;
+  animation-delay: 0s;
+}
+.p2 {
+  animation-duration: 2.5s;
+  animation-delay: 0.3s;
+}
+.p3 {
+  animation-duration: 2s;
+  animation-delay: 0.6s;
+}
+.p4 {
+  animation-duration: 2.8s;
+  animation-delay: 0.2s;
+}
+.p5 {
+  animation-duration: 2.3s;
+  animation-delay: 0.4s;
+}
+.p6 {
+  animation-duration: 3s;
+  animation-delay: 0.1s;
+}
+.p7 {
+  animation-duration: 2.1s;
+  animation-delay: 0.5s;
+}
+.p8 {
+  animation-duration: 2.6s;
+  animation-delay: 0.2s;
+}
+.p9 {
+  animation-duration: 2.4s;
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce-lines {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+#line-v1,
+#line-v2,
+#node-server,
+#panel-rigth,
+#reflectores,
+#particles {
+  animation: bounce-lines 3s ease-in-out infinite alternate;
+}
+#line-v2 {
+  animation-delay: 0.2s;
+}
+
+#node-server,
+#panel-rigth,
+#reflectores,
+#particles {
+  animation-delay: 0.4s;
 }
