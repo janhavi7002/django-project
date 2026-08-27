@@ -1,21 +1,28 @@
 
 body{
 
-    background-image:url(bg19.jpg) !important;
+    color:#ffffff !important;
+    font-family:Georgia, 'Times New Roman', serif;
+    background-color:#000000 !important;
+    background-image:
+        radial-gradient(circle at 100% 50%, #ff00cc 0% 2%, #00ffcc 3% 5%, transparent 6%),
+        radial-gradient(circle at 0% 50%, #ff00cc 0% 2%, #00ffcc 3% 5%, transparent 6%),
+        radial-gradient(ellipse at 50% 0%, #3300ff 0% 3%, transparent 4%),
+        radial-gradient(circle at 50% 50%, #00ffcc 0% 1%, #ff00cc 2% 3%, #3300ff 4% 5%, transparent 6%),
+        repeating-linear-gradient(45deg, #000000, #1a1a1a 10px, #242424 10px, #242424 20px) !important;
+    background-size:80px 80px, 50px 80px, 40px 80px, 60px 60px, 100% 100% !important;
+    animation:admin-shift 15s linear infinite;
+}
 
-    background-size:cover !important;
-
-    background-repeat:no-repeat !important;
-
-    background-position:center ;
-
-    background-attachment:fixed;
+@keyframes admin-shift {
+    from { background-position:0 0, 0 0, 10px 10px, 20px 20px, 0 0; }
+    to { background-position:50px 50px, -50px -50px, 60px 60px, 80px 80px, 0 0; }
 }
 
 
 #container{
 
-    background:rgba(0,0,0,0.35) !important;
+    background:rgba(10,10,30,0.72) !important;
 
     backdrop-filter:blur(10px);
 
@@ -57,11 +64,12 @@ body{
 
 #site-name a{
 
-    color:#2e9a44 !important;
+    color:#ffffff !important;
 
     font-size:32px;
 
     font-family:cursive;
+    text-shadow:1px 2px 3px rgba(0,0,0,0.6);
 }
 
 
@@ -73,7 +81,7 @@ body{
 
 div.breadcrumbs{
 
-    background:#27a549 !important;
+    background:rgba(35,37,110,0.72) !important;
 
     color:white !important;
 }
@@ -89,4 +97,167 @@ input[type=button],
     border:none !important;
 
     border-radius:15px !important;
+}
+
+#content,
+#content-main,
+.module,
+.inline-group,
+.submit-row {
+    color:#ffffff !important;
+}
+
+.module,
+.inline-group {
+    background:rgba(255,255,255,0.08) !important;
+    border:1px solid rgba(255,255,255,0.2) !important;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.module h2,
+.module caption {
+    color:#ffffff !important;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.6);
+}
+
+#result_list thead th,
+#result_list tbody td,
+#result_list tbody th,
+.form-row label,
+.help,
+p,
+li,
+td,
+th {
+    color:#ffffff !important;
+}
+
+a {
+    color:#e8c9ff !important;
+}
+
+input,
+select,
+textarea {
+    background:rgba(255,255,255,0.12) !important;
+    color:#ffffff !important;
+    border:1px solid rgba(255,255,255,0.25) !important;
+    border-radius:10px !important;
+}
+
+select option {
+    color:#000000;
+}
+
+@media (max-width:768px) {
+    #header {
+        padding:10px 14px;
+    }
+
+    #site-name a {
+        font-size:24px;
+    }
+
+    #content,
+    #content-main {
+        width:100%;
+        padding:15px;
+    }
+
+    .module,
+    .inline-group {
+        overflow-x:auto;
+    }
+
+    #result_list {
+        min-width:700px;
+    }
+
+    .submit-row {
+        display:flex;
+        flex-wrap:wrap;
+        gap:8px;
+    }
+}
+
+html {
+    overflow-x:hidden;
+}
+
+body {
+    min-width:0;
+    overflow-x:hidden;
+}
+
+@media (max-width:480px) {
+    #header {
+        padding:8px 10px;
+    }
+
+    #site-name a {
+        font-size:20px;
+    }
+
+    #content,
+    #content-main {
+        padding:10px;
+    }
+
+    .breadcrumbs {
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    .object-tools {
+        display:flex;
+        flex-wrap:wrap;
+        gap:8px;
+    }
+
+    .object-tools li {
+        margin:0;
+    }
+
+    .object-tools a {
+        font-size:13px;
+    }
+}
+
+@media (max-width:360px) {
+    #content,
+    #content-main {
+        padding:8px;
+    }
+
+    #site-name a {
+        font-size:18px;
+    }
+
+    .button,
+    input[type=submit],
+    input[type=button],
+    .submit-row input {
+        width:100%;
+        box-sizing:border-box;
+    }
+}
+
+html,
+body {
+    min-width:0;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+#container {
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+}
+
+#content,
+#content-main {
+    max-width:100%;
+    box-sizing:border-box;
 }

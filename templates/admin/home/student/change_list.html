@@ -1,0 +1,66 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools-items %}
+
+<li>
+    <a
+        href="{% url 'admin:home_student_export_excel' %}{% if request.GET.urlencode %}?{{ request.GET.urlencode }}{% endif %}"
+        class="excel-export-button"
+        title="Export student data to Excel"
+    >
+        <span class="excel-icon">X</span>
+        Export to Excel
+    </a>
+</li>
+
+{{ block.super }}
+
+<style>
+
+    .excel-export-button {
+        background: #217346 !important;
+        color: #ffffff !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+
+        padding: 10px 14px !important;
+
+        border-radius: 6px !important;
+
+        font-weight: 600 !important;
+
+        text-decoration: none !important;
+
+        margin-right: 8px !important;
+    }
+
+    .excel-export-button:hover {
+        background: #185c37 !important;
+        color: #ffffff !important;
+    }
+
+    .excel-icon {
+        background: #ffffff;
+        color: #217346;
+
+        width: 22px;
+        height: 22px;
+
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 3px;
+
+        font-size: 13px;
+        font-weight: bold;
+
+        font-family: Arial, sans-serif;
+    }
+
+</style>
+
+{% endblock %}

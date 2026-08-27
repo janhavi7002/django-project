@@ -4,13 +4,79 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background-image:url(bg15.jpg);
+    background: #000;
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
     background-attachment:fixed;
-    
+     width: 100%;
+  height: 100vh;
+  background: 
+    /* Diagonal slices */
+    radial-gradient(
+      circle at 100% 50%,
+      #ff00cc 0% 2%,
+      #00ffcc 3% 5%,
+      transparent 6%
+    ),
+    /* Offset dots */
+      radial-gradient(
+        circle at 0% 50%,
+        #ff00cc 0% 2%,
+        #00ffcc 3% 5%,
+        transparent 6%
+      ),
+    /* Wave-like pattern */
+      radial-gradient(ellipse at 50% 0%, #3300ff 0% 3%, transparent 4%) 10px
+      10px,
+    /* Scattered elements */
+      radial-gradient(
+        circle at 50% 50%,
+        #00ffcc 0% 1%,
+        #ff00cc 2% 3%,
+        #3300ff 4% 5%,
+        transparent 6%
+      )
+      20px 20px,
+    /* Background texture */
+      repeating-linear-gradient(
+        45deg,
+        #000000,
+        #1a1a1a 10px,
+        #242424 10px,
+        #242424 20px
+      );
+  background-size:
+    80px 80px,
+    50px 80px,
+    40px 80px,
+    60px 60px,
+    100% 100%;
+  animation: shift 15s linear infinite;
+  color:#ffffff;
 }
+
+@keyframes shift {
+  0% {
+    background-position:
+      0 0,
+      0 0,
+      10px 10px,
+      20px 20px,
+      0 0;
+  }
+  100% {
+    background-position:
+      50px 50px,
+      -50px -50px,
+      60px 60px,
+      80px 80px,
+      0 0;
+  }
+}
+
+    
+
 
 .form-container{
     display: flex;
@@ -26,9 +92,9 @@ body{
 
     backdrop-filter:blur(10px);
 
-    background:rgba(248, 72, 218, 0.08);
+    background:rgba(72, 72, 248, 0.08);
 
-    border:1px solid rgba(255,255,255,0.2);
+    border:1px solid rgba(78, 45, 210, 0.2);
 
     box-shadow:0px 8px 32px rgba(0,0,0,0.4);
 
@@ -36,7 +102,176 @@ body{
 }
 
 .form-container h2{
-    color:#f0d6ff;
+  margin:0 0 20px;
+  color:#ffffff !important;
+}
+
+body,
+.form-container,
+.form-container * {
+  color:#ffffff;
+}
+
+.form-container h1,
+.form-container h3,
+.form-container p,
+.form-container strong,
+.form-container td,
+.form-container th,
+.form-container label,
+.notification-card,
+.empty-message {
+  color:#ffffff !important;
+}
+
+.form-container h1,
+.form-container h2,
+.form-container h3,
+.form-container p,
+.form-container a,
+.form-container td,
+.form-container th,
+.form-container label {
+  color:#ffffff !important;
+}
+
+.form-container h1,
+.form-container h2 {
+  text-shadow:1px 2px 3px rgba(0,0,0,0.6);
+}
+
+.form-container table {
+  width:100%;
+  border-collapse:collapse;
+}
+
+.form-container th,
+.form-container td {
+  padding:14px;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  text-align:left;
+}
+
+.form-container th {
+  text-shadow:1px 1px 2px rgba(0,0,0,0.6);
+}
+
+.notification-card {
+  width:100%;
+  box-sizing:border-box;
+  margin:12px 0;
+  padding:15px;
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:15px;
+  background:rgba(255,255,255,0.1);
+  text-align:left;
+}
+
+.anime-form select {
+  width:350px;
+  padding:14px;
+  border:none;
+  border-radius:15px;
+  outline:none;
+  box-sizing:border-box;
+  background:rgba(80,43,166,0.15);
+  color:#ffffff;
+  font-size:16px;
+}
+
+.anime-form select option {
+  color:#000000;
+}
+
+.component-row {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:15px;
+}
+
+.component-row label {
+  text-align:left;
+}
+
+.add-btn {
+  padding:12px 20px;
+  border:none;
+  border-radius:15px;
+  background:#23256e;
+  color:#ffffff;
+  cursor:pointer;
+}
+
+.issue-page {
+  align-items:flex-start;
+  padding:24px 12px;
+  box-sizing:border-box;
+  overflow-y:auto;
+}
+
+.issue-container {
+  width:min(500px,100%);
+  max-width:500px;
+  margin:0 auto;
+  padding:28px;
+  box-sizing:border-box;
+}
+
+.issue-container .anime-form {
+  width:100%;
+  gap:14px;
+  align-items:stretch;
+}
+
+.issue-container .anime-form input,
+.issue-container .anime-form select {
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+}
+
+.issue-container .component-row {
+  width:100%;
+  margin-bottom:4px;
+}
+
+.issue-container .add-btn,
+.issue-container .anime-form button[type="submit"] {
+  width:100%;
+  box-sizing:border-box;
+}
+
+.issue-container .anime-form input,
+.issue-container .anime-form select,
+.issue-container .anime-form button,
+.issue-container .add-btn {
+  min-height:46px;
+}
+
+@media (max-width:600px) {
+  .form-container {
+    width:92%;
+    padding:25px 18px;
+  }
+
+  .anime-form input,
+  .anime-form select {
+    width:min(350px,85vw);
+  }
+
+  .form-container table {
+    display:block;
+    overflow-x:auto;
+  }
+
+  .issue-page {
+    padding:14px 0;
+  }
+
+  .issue-container {
+    padding:24px 18px;
+  }
 }
 
 
@@ -52,22 +287,32 @@ body{
 }
 
 .anime-form input{
+
     width:350px;
+
     padding:14px;
+
     border:none;
+
     border-radius:15px;
+
     outline:none;
-    background:rgba(255,255,255,0.15);
+
+    background:rgba(80, 43, 166, 0.15);
+
     color:white;
+
     font-size:16px;
+
     backdrop-filter:blur(5px);
+
     align-items: center;
     align-content: center;
 }
 
-
 .anime-form input::placeholder{
-    color:#f0d6ff;
+  color:#ffffff;
+  opacity:0.85;
 }
 
 .anime-form button{
@@ -78,7 +323,7 @@ body{
 
     border-radius:20px;
 
-    background:#069454;
+    background:#23256e;
 
     color:white;
 
@@ -93,7 +338,7 @@ body{
 
     transform:scale(1.05);
 
-    background:#ffbef7;
+    background:#1c7a88;
 }
 
 .error-box{
@@ -103,4 +348,429 @@ body{
     background:rgba(255,100,150,0.15);
     color:#ffd6e8;
     border:1px solid rgba(255,255,255,0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing:border-box;
+}
+
+@media (max-width:768px) {
+  body {
+    height:auto;
+    min-height:100vh;
+    padding:20px 0;
+  }
+
+  .form-container {
+    width:min(92%, 520px);
+    padding:28px 20px;
+  }
+
+  .anime-form {
+    width:100%;
+    gap:16px;
+  }
+
+  .anime-form input,
+  .anime-form select,
+  .anime-form button {
+    width:100%;
+    max-width:100%;
+  }
+
+  .form-container h1 {
+    font-size:clamp(24px, 7vw, 30px);
+  }
+
+  .form-container table {
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .issue-page {
+    padding:14px 0;
+  }
+}
+
+.form-container,
+.form-container h1,
+.form-container h2,
+.form-container h3,
+.form-container p,
+.form-container strong,
+.form-container a,
+.form-container th,
+.form-container td,
+.form-container label,
+.form-container .notification-card,
+.form-container .empty-message {
+  color:#ffffff !important;
+}
+
+.form-container a:visited {
+  color:#ffffff !important;
+}
+
+/* Final responsive layout for shared public pages. */
+html {
+  overflow-x:hidden;
+}
+
+body {
+  width:100%;
+  min-width:0;
+  overflow-x:hidden;
+  font-size:16px;
+  line-height:1.45;
+}
+
+.form-container {
+  width:min(60%, 640px);
+  max-width:calc(100vw - 32px);
+  padding:clamp(24px, 5vw, 40px);
+}
+
+.form-container h1,
+.form-container h2,
+.form-container h3 {
+  max-width:100%;
+  overflow-wrap:anywhere;
+}
+
+.anime-form,
+.anime-form input,
+.anime-form select,
+.anime-form button {
+  max-width:100%;
+}
+
+.issue-page {
+  align-items:flex-start;
+  padding:24px 16px;
+}
+
+.issue-container {
+  width:min(500px, 100%);
+  max-width:100%;
+  margin:0 auto;
+}
+
+@media (max-width:768px) {
+  body {
+    align-items:flex-start;
+    padding:16px 0;
+  }
+
+  .form-container {
+    width:calc(100% - 24px);
+    max-width:none;
+    padding:24px 16px;
+    border-radius:20px;
+  }
+
+  .form-container h1 {
+    font-size:clamp(24px, 7vw, 30px);
+  }
+
+  .anime-form {
+    width:100%;
+    gap:14px;
+  }
+
+  .anime-form input,
+  .anime-form select,
+  .anime-form button,
+  .add-btn {
+    width:100% !important;
+    min-height:46px;
+  }
+
+  .form-container table {
+    display:block;
+    max-width:100%;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .issue-page {
+    padding:12px 0;
+  }
+
+  .issue-container {
+    width:calc(100% - 24px);
+    padding:22px 16px;
+  }
+}
+
+@media (max-width:400px) {
+  .form-container {
+    width:calc(100% - 16px);
+    padding:20px 12px;
+  }
+
+  .form-container th,
+  .form-container td {
+    padding:10px 8px;
+    font-size:14px;
+  }
+}
+
+/* Keep the long component form inside one aligned column. */
+.issue-page .issue-container {
+  width:500px !important;
+  max-width:calc(100vw - 24px) !important;
+  margin:0 auto !important;
+  padding:28px !important;
+}
+
+.issue-page .issue-container .anime-form,
+.issue-page .issue-container #components-container,
+.issue-page .issue-container .component-row {
+  width:100% !important;
+  max-width:100% !important;
+}
+
+.issue-page .issue-container .anime-form input,
+.issue-page .issue-container .anime-form select,
+.issue-page .issue-container .anime-form button,
+.issue-page .issue-container .add-btn {
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+
+.issue-page .issue-container .component-row label {
+  display:block !important;
+  width:100% !important;
+  margin:0 0 8px !important;
+  color:#ffffff !important;
+  text-align:left !important;
+}
+
+@media (max-width:520px) {
+  .issue-page .issue-container {
+    padding:22px 16px !important;
+  }
+}
+
+.history-page .form-container h1,
+.history-page .form-container h3,
+.history-page .form-container p,
+.history-page .form-container table,
+.history-page .form-container thead,
+.history-page .form-container tbody,
+.history-page .form-container tr,
+.history-page .form-container th,
+.history-page .form-container td,
+.history-page .form-container a,
+.history-page .form-container a:visited {
+  color:#ffffff !important;
+}
+
+/* Phone layout must come after the legacy fixed-width rules above. */
+@media (max-width:480px) {
+  html,
+  body {
+    width:100%;
+    min-width:0;
+    overflow-x:hidden;
+  }
+
+  body {
+    min-height:100svh;
+    height:auto;
+    align-items:flex-start;
+    padding:16px 0;
+  }
+
+  .form-container {
+    width:calc(100% - 24px);
+    max-width:none;
+    min-width:0;
+    margin:0 auto;
+    padding:24px 16px;
+    border-radius:22px;
+  }
+
+  .form-container h1,
+  .form-container h2 {
+    width:100%;
+    margin-top:0;
+    font-size:clamp(24px, 8vw, 30px);
+    line-height:1.15;
+    overflow-wrap:anywhere;
+  }
+
+  .anime-form {
+    width:100%;
+    min-width:0;
+    gap:14px;
+  }
+
+  .anime-form input,
+  .anime-form select,
+  .anime-form button,
+  .add-btn {
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0;
+    min-height:48px;
+    margin:0;
+    font-size:16px;
+  }
+
+  .anime-form input,
+  .anime-form select {
+    padding:13px 14px;
+  }
+
+  .error-box,
+  .notification-card {
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+    overflow-wrap:anywhere;
+  }
+
+  .form-container table {
+    display:block;
+    width:100%;
+    max-width:100%;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .issue-page {
+    padding:12px 0;
+  }
+
+  .issue-container {
+    width:calc(100% - 24px);
+    padding:20px 14px;
+  }
+}
+
+.profile-page .form-container h1,
+.profile-page .form-container h2,
+.profile-page .form-container h3,
+.profile-page .form-container p,
+.profile-page .form-container strong,
+.profile-page .form-container a,
+.profile-page .form-container a:visited,
+.notifications-page .form-container h1,
+.notifications-page .form-container h2,
+.notifications-page .form-container h3,
+.notifications-page .form-container p,
+.notifications-page .form-container a,
+.notifications-page .form-container a:visited,
+.notifications-page .form-container .notification-card {
+  color:#ffffff !important;
+}
+
+/* Final centering rules override older page-specific declarations. */
+html,
+body {
+  width:100%;
+  min-width:0;
+  overflow-x:hidden;
+}
+
+body:not(.issue-page) {
+  min-height:100svh;
+  height:auto;
+  display:flex;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:16px;
+}
+
+body:not(.issue-page) .form-container {
+  margin:0 auto;
+}
+
+.issue-page {
+  min-height:100svh;
+  height:auto;
+  display:flex;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:24px 16px;
+  overflow-y:auto;
+}
+
+.issue-page .issue-container {
+  width:min(500px, 100%) !important;
+  max-width:100% !important;
+  margin:0 auto !important;
+}
+
+@media (max-width:480px) {
+  body:not(.issue-page) {
+    padding:12px 8px;
+  }
+
+  .issue-page {
+    padding:12px 8px;
+  }
+}
+
+@media (max-width:480px) {
+  .form-container h1,
+  .form-container h2,
+  .form-container h3 {
+    font-size:22px !important;
+    line-height:1.2;
+  }
+
+  .form-container p,
+  .form-container a,
+  .form-container label,
+  .form-container td,
+  .form-container th,
+  .notification-card,
+  .empty-message {
+    font-size:14px;
+  }
+}
+
+/* Phone polish: center short pages and keep the long form scrollable. */
+body {
+  font-size:15px;
+}
+
+@media (max-width:480px) {
+  body:not(.issue-page) {
+    align-items:center;
+    justify-content:center;
+    padding:12px 0;
+  }
+
+  body:not(.issue-page) .form-container {
+    padding:20px 14px;
+  }
+
+  body:not(.issue-page) .form-container h1,
+  body:not(.issue-page) .form-container h2 {
+    font-size:24px;
+    margin-bottom:16px;
+  }
+
+  body:not(.issue-page) .anime-form {
+    gap:12px;
+  }
+
+  body:not(.issue-page) .anime-form input,
+  body:not(.issue-page) .anime-form select,
+  body:not(.issue-page) .anime-form button {
+    min-height:44px;
+    padding:11px 13px;
+  }
+
+  .issue-page .issue-container h2 {
+    font-size:24px;
+  }
 }

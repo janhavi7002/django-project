@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify OTP</title>
-<link rel="stylesheet" href="/static/otp.css">
+<link rel="stylesheet" href="{% static 'login.css' %}">
 </head>
 <body>
 <div class="form-container">
@@ -25,12 +26,13 @@
     </button>
 
 </form>
-</div>
+
 {% if error %}
-<p style="color:red;">
+<div class="error-box">
     {{ error }}
-</p>
+    </div>
 {% endif %}
 
+</div>
 </body>
 </html>

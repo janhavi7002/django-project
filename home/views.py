@@ -3,6 +3,7 @@ from .models import Student
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.core.mail import send_mail
+from django.conf import settings
 from datetime import date, datetime
 import random
 
@@ -153,7 +154,7 @@ def login_user(request):
                 send_mail(
                     "Makers Studio Login OTP",
                     f"Your OTP is {otp}",
-                    "yourgmail@gmail.com",
+                    settings.EMAIL_HOST_USER,
                     [user.email],
                     fail_silently=False,
                 )
