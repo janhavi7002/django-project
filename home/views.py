@@ -149,12 +149,16 @@ def login_user(request):
                 request.session["otp"] = str(otp)
                 request.session["user_id"] = user.id
 
-                print("OTP =", otp)
-
                 send_mail(
-                    "Makers Studio Login OTP",
-                    f"Your OTP is {otp}",
-                    settings.EMAIL_HOST_USER,
+                    "Your Makers Studio verification code",
+                    (
+                        f"Hello {user.username},\n\n"
+                        f"Your verification code is: {otp}\n\n"
+                        "This code is required to complete your login. "
+                        "If you did not request it, you can ignore this email.\n\n"
+                        "Makers Studio"
+                    ),
+                    settings.DEFAULT_FROM_EMAIL,
                     [user.email],
                     fail_silently=False,
                 )
